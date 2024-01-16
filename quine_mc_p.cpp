@@ -319,8 +319,8 @@ void  quine :: multi_syscom12 (int p1air01[ 8 ][ 4 ][ 2 ] , int p1air12[ 8 ][ 4 
                                 }   }   }   }   }
 }
 void  quine  ::  missing_ele( ) {
-    int m ; // cout<<"worked ele first"<<endl;
-    for ( int i = 0 ; i <= 15 ; i++ ){   int k=1 ; m = 16;      
+    int m ;int k=1 ; // cout<<"worked ele first"<<endl;
+    for ( int i = 0 ; i <= 15 ; i++ ){    m = 16;      
         for ( int j = 0 ; j <= 15 ; j++ ){
             if ( presnt_arr[ i ] == 0 && arr5[ j ] == 0 ){ m = i ; k = 0 ; break ; }
             if ( presnt_arr[ i ] == arr5[ j ] && presnt_arr[ i ] < 16 && arr5[ j ] < 16 ) {  m = i ; k = 0 ; break ; }  
