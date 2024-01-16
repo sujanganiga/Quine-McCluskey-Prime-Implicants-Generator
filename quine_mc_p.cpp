@@ -311,6 +311,7 @@ void  quine :: multi_syscom12 (int p1air01[ 8 ][ 4 ][ 2 ] , int p1air12[ 8 ][ 4 
                     if ( max > 0 && max <= 15 && ( n1 == 1 || n1 == 2 || n1 == 4 || n1 == 8 ) && ( n5 == 1 || n5 == 2 || n5 == 4 || n5 == 8 ) && ( n4 == 1 || n4==2 || n4==4 || n4==8 ) && find_16( a , b , c , d ) && find_16( e, f, g, h)){
                         if( max <= 15 && max != -1 && ( min == 0 || min == 1 || min == 2 || min == 4 || min==8 ) && varifing_arr[max][min] == 16 ){
                             fourth_dif = min ;
+                            cout<<"\033[1;33m("<<a<<","<<b<<","<<c<<","<<d <<")("<< e <<","<< f <<","<< g <<","<< h <<")\033[0m"<<"\033[1;35m   -->   \033[0m ";
                             varifing_arr[ max ][ min ] = 1;
                             decToBinary( max , 5 ) ; }  }
                     if ( i == 2 && j == 2 && l == 2 && m == 2 ){  k++;
