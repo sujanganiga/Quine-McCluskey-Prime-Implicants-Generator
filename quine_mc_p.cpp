@@ -274,20 +274,22 @@ void quine::syscom1(){
                 }   }
 }
 void quine::syscom2 (int plair12[8][4][2],int plair23[8][4][2], int k, int alrrch1[15],int f1 , int inc ){
-    int num , num1 , num2 , numd ;
+    int num , num1 , num2 , num5 ;
     for( int i = 0 ; i < 3 ; i++ ) {
           for( int j = 0 ; j < 3 ; j++ ){
                 num = get_min ( plair12[k][i][1] , plair12[k][i][0] , plair23[k][j][1] , plair23[k][j][0] ) ;
+                num5 = get_max ( plair12[k][i][1] , plair12[k][i][0] , plair23[k][j][1] , plair23[k][j][0] ) ;
+
                 num1 = plair23[k][j][0] - plair12[k][i][0] ; num2 = plair23[k][j][1] - plair12[k][i][0] ;
                 if( num > 0 && num <= 15 &&( num1 == 1 || num1 == 2 || num1==4 || num1==8 ) && find_16( plair12[k][i][1] , plair12[k][i][0] , plair23[k][j][1] , plair23[k][j][0] ) ) {                
-                   if(search_in_s1( alrrch1 ,num) && search_in_s3( alrrch1,num ,num1) ){
+                   if(search_in_s1( alrrch1 ,num5) ){
                        cout<<"\033[1;33m("<<pair12[ k ][ i ][ 0 ] <<","<< pair12[ k ][ i ][ 1 ] <<")"<<"("<< pair23[ k ][ j ][ 0 ] <<","<< pair23[ k ][ j ][ 1 ]<<")\033[0m"<<"\033[1;35m   -->   \033[0m ";
                       store_present( plair12[k][i][0] ) ; store_present( plair12[k][i][1] ) ; store_present( plair23[k][j][0] ) ;store_present( plair23[k][j][1] ) ;
                        insert_pi ( 2 , inc , plair12 [ k ][ i ][ 0 ] ) ; insert_pi( 2 , inc ,  plair12[ k ][ i ][ 1 ] ) ;
                       insert_pi( 2 ,  inc , plair23[ k ][ j ][ 0 ] ) ; insert_pi ( 2 , inc ,  plair23[ k ][ j ][ 1 ] ) ;
                       inc++;
-                      alrrch1[f1] = num1 ; f1++;
-                      alrrch1[f1] = num ; f1++ ;
+                      alrrch1[f1] = num5 ; f1++;
+                      //alrrch1[f1] = num ; f1++ ;
                       first_dif = k ; second_dif = num1 ;
                       decToBinary( num , 3 ) ;   }  }
                 if( i == 2 && j == 2 ) {
